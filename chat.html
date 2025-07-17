@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="chat_logic.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Chat-gpt-clone</title>
+  </head>
+  <body>
+    <div
+      class="container d-flex min-vh-100 align-items-center justify-content-center flex-column"
+    >
+      <h1 class="text-center mb-4" id="mainText">What are you working on?</h1>
+      <div class="container mb-4 mt-4" style=" overflow-y: auto;">
+        <ul id="msgs" class="container mb-4 mt-4 list-unstyled d-flex flex-column gap-2" ></ul>
+      </div>
+
+      <div class="mx-auto w-100" style="max-width: 600px" id="chatBox">
+        <form
+          action="/chat"
+          method="post"
+          onsubmit="send_massage(event)"
+          id="chatForm"
+        >
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ask anything..."
+              aria-label="Recipient’s username"
+              aria-describedby="button-addon2"
+              name="input"
+              id="input"
+            />
+            <button
+              class="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                class="bi bi-arrow-up-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div></div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
